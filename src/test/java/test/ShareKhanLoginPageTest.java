@@ -1,7 +1,9 @@
 package test;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
+import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -22,7 +24,7 @@ public class ShareKhanLoginPageTest {
 	}
 	
 	@Test
-	public void loginTest() throws InterruptedException
+	public void loginTest() throws InterruptedException, EncryptedDocumentException, IOException
 	{
 		ShareKhanLoginPage shareKhanLoginPage=new ShareKhanLoginPage(driver);
 		Thread.sleep(2000);
@@ -32,7 +34,7 @@ public class ShareKhanLoginPageTest {
 		driver.switchTo().window(list.get(1));
 		System.out.println(driver.getTitle());
 		Thread.sleep(2000);
-		Excel.getData("credential", , 0)
+		Excel.getData("credential", 1, 0);
 		Thread.sleep(2000);
 		shareKhanLoginPage.clickOnNext();
 		
